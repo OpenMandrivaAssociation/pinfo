@@ -8,7 +8,8 @@ BuildRequires: 	ncurses-devel
 License: 	GPL
 Url: 		http://alioth.debian.org/project/showfiles.php?group_id=30592
 Source0: 	http://alioth.debian.org/download.php/1498/%{name}-%{version}.tar.bz2
-PAtch0:		pinfo-0.6.9-lzma-support.patch
+Patch0:		pinfo-0.6.9-lzma-support.patch
+Patch1:		pinfo-0.6.9-as-needed.patch
 
 %description
 Hypertext info file viewer. User interface similar to lynx.
@@ -18,8 +19,13 @@ pages as man pages. Regexp searching included.
 %prep
 %setup -q
 %patch0 -p1 -b .lzma_support
+%patch1 -p1
 
 %build
+#needed by patch 1
+aclocal
+libtoolize --copy --force
+autoreconf
 %configure 
 %make
 %make -C po
