@@ -1,7 +1,7 @@
 Summary: 	Przemek's Info Viewer - a (much) better info
 Name: 		pinfo
 Version: 	0.6.9
-Release: 	%mkrel 5
+Release: 	%mkrel 6
 Group: 		Development/Other
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	ncurses-devel
