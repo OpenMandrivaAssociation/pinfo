@@ -3,7 +3,7 @@ Name: 		pinfo
 Version: 	0.6.10
 Release: 	1
 Group: 		Development/Other
-BuildRequires: 	ncurses-devel
+BuildRequires: 	ncurses-devel gettext-devel autoconf automake
 License: 	GPL
 Url: 		http://alioth.debian.org/project/showfiles.php?group_id=30592
 Source0: 	http://alioth.debian.org/download.php/1498/%{name}-%{version}.tar.bz2
