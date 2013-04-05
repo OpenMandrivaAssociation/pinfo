@@ -1,9 +1,10 @@
 Summary: 	Przemek's Info Viewer - a (much) better info
 Name: 		pinfo
 Version: 	0.6.9
-Release: 	13
+Release: 	14
 Group: 		Development/Other
 BuildRequires: 	ncurses-devel
+BuildRequires:  texinfo
 License: 	GPL
 Url: 		http://alioth.debian.org/project/showfiles.php?group_id=30592
 Source0: 	http://alioth.debian.org/download.php/1498/%{name}-%{version}.tar.bz2
