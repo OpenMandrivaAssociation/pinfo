@@ -1,14 +1,13 @@
 Summary: 	Przemek's Info Viewer - a (much) better info
 Name: 		pinfo
-Version: 	0.6.9
-Release: 	14
+Version: 	0.6.10
+Release: 	1
 Group: 		Development/Other
-BuildRequires: 	ncurses-devel
-BuildRequires:  texinfo
+BuildRequires: 	ncurses-devel gettext-devel autoconf automake texinfo
 License: 	GPL
 Url: 		http://alioth.debian.org/project/showfiles.php?group_id=30592
 Source0: 	http://alioth.debian.org/download.php/1498/%{name}-%{version}.tar.bz2
-Patch0:		pinfo-0.6.9-lzma-support.patch
+Patch:		pinfo-0.6.10-lzma-xz-lzip.patch
 Patch1:		pinfo-0.6.9-as-needed.patch
 
 %description
@@ -18,14 +17,11 @@ pages as man pages. Regexp searching included.
 
 %prep
 %setup -q
-%patch0 -p1 -b .lzma_support
-%patch1 -p1
+%patch -p1 -b .lzmaXzLzip~
+%patch1 -p1 -b .as_needed~
+./autogen.sh --no-configure
 
 %build
-#needed by patch 1
-aclocal
-libtoolize --copy --force
-autoreconf
 %configure 
 %make
 %make -C po
@@ -38,7 +34,6 @@ autoreconf
 ln -s pinfo %{buildroot}%{_bindir}/pman
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog README TECHSTUFF
 %config(noreplace) %{_sysconfdir}/pinforc
 %{_bindir}/*
@@ -47,7 +42,12 @@ ln -s pinfo %{buildroot}%{_bindir}/pman
 
 
 %changelog
-* Thu May 05 2011 Oden Eriksson <oeriksson@mandriva.com> 0.6.9-10mdv2011.0
+* Tue Apr 03 2012 Bernhard Rosenkraenzer <bero@bero.eu> 0.6.10-1
++ Revision: 789074
+- Update to 0.6.10
+- Add support for xz and lzip compressed files
+
+* Thu May 05 2011 Oden Eriksson <oeriksson@mandriva.com> 0.6.9-10
 + Revision: 667775
 - mass rebuild
 
