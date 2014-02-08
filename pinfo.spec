@@ -1,7 +1,7 @@
 Summary: 	Przemek's Info Viewer - a (much) better info
 Name: 		pinfo
 Version: 	0.6.10
-Release: 	1
+Release: 	2
 Group: 		Development/Other
 BuildRequires: 	ncurses-devel gettext-devel autoconf automake texinfo
 License: 	GPL
