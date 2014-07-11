@@ -1,7 +1,7 @@
 Summary:	Przemek's Info Viewer - a (much) better info
 Name:		pinfo
 Version:	0.6.10
-Release:	6
+Release:	7
 Group:		Development/Other
 License:	GPLv2
 Url:		http://alioth.debian.org/project/showfiles.php?group_id=30592
