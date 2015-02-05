@@ -24,6 +24,7 @@ pages as man pages. Regexp searching included.
 ./autogen.sh --no-configure
 
 %build
+export CC=gcc
 %configure 
 %make
 %make -C po
