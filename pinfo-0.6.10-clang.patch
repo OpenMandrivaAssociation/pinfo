@@ -1,0 +1,31 @@
+--- pinfo-0.6.10/src/parse_config.h.omv~	2015-07-27 16:11:51.795587452 +0200
++++ pinfo-0.6.10/src/parse_config.h	2015-07-27 16:11:56.872588657 +0200
+@@ -85,7 +85,7 @@ typedef struct colours
+ colours;
+ #endif /* NO_COLOR_CURSES */
+ 
+-int use_manual;
++extern int use_manual;
+ 
+ int parse_config (void);
+ int parse_line (char *line);
+--- pinfo-0.6.10/src/filehandling_functions.c.omv~	2015-07-27 16:20:00.378703413 +0200
++++ pinfo-0.6.10/src/filehandling_functions.c	2015-07-27 16:20:35.447711736 +0200
+@@ -554,7 +554,7 @@ seek_tag_table(FILE * id,int quiet)
+ 	return 1;
+ }
+ 
+-inline void
++static inline void
+ buildcommand(char *dest, char *command, char *filename, const char *tmpfilename)
+ {
+ 	strcpy(dest, command);
+@@ -564,7 +564,7 @@ buildcommand(char *dest, char *command,
+ 	strcat(dest, tmpfilename);
+ }
+ 
+-inline void
++static inline void
+ builddircommand(char *dest, char *command, char *filename, const char *tmpfilename)
+ {
+ 	strcpy(dest, command);
