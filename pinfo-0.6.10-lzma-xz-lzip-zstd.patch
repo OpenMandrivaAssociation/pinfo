@@ -1,11 +1,11 @@
 --- pinfo-0.6.10/src/filehandling_functions.c.bero	2012-04-03 20:39:59.976157425 +0200
 +++ pinfo-0.6.10/src/filehandling_functions.c	2012-04-03 20:42:59.219158315 +0200
-@@ -41,14 +41,17 @@ char * basename(char *filename);
+@@ -41,14 +41,18 @@ char * basename(char *filename);
   * you dump the file through `gunzip -d -c', etc.                              *
   ******************************************************************************/
  
 -#define SuffixesNumber 4
-+#define SuffixesNumber 7
++#define SuffixesNumber 8
  
  Suffixes suffixes[SuffixesNumber] =
  {
@@ -16,7 +16,8 @@
 +	{".bz2",	"bzip2 -d -c"},
 +	{".lzma",	"lzma -d -q -c"},
 +	{".xz",		"xz -d -c"},
-+	{".lz",		"lzip -d -c"}
++	{".lz",		"lzip -d -c"},
++	{".zst",	"zstd -d -c"}
  };
  
  /*****************************************************************************/
@@ -28,7 +29,7 @@
  The search path can be adjusted by INFOPATH environment variable or in the configuration
 -file. Pinfo will also automatically add the suffix '-info', '-info.Z', '-info.gz', or '-info.bz2'.
 +file. Pinfo will also automatically add the suffix '-info', '-info.Z', '-info.gz', '-info.bz2',
-+'-info.lzip', '-info.xz' or '-info.lzma'.
++'-info.lzip', '-info.xz', '-info.lzma' or '-info.zst'.
  At present other suffixes are not recognized, but you can easily add them to
  the function 
  .I openinfo() 
@@ -41,7 +42,7 @@
 -@samp{-info}, @samp{-info.Z}, @samp{-info.gz}, or @samp{-info.bz2}. At
 -present other suffixes are not recognized, but you can easily add them
 +@samp{-info}, @samp{-info.Z}, @samp{-info.gz}, @samp{-info.bz2}, @samp{-info.lzma},
-+@samp{-info.lzip} or @samp{-info.xz}.
++@samp{-info.lzip}, @samp{-info.xz} or @samp{-info.zst}.
 +At present other suffixes are not recognized, but you can easily add them
  to the function @code{openinfo()} in @file{filehandling_functions.c}.
  
