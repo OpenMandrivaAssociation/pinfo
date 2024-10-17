@@ -4,7 +4,7 @@ Version:	0.6.10
 Release:	14
 Group:		Development/Other
 License:	GPLv2
-Url:		http://alioth.debian.org/project/showfiles.php?group_id=30592
+Url:		https://alioth.debian.org/project/showfiles.php?group_id=30592
 Source0:	http://alioth.debian.org/download.php/1498/%{name}-%{version}.tar.bz2
 Patch0:		pinfo-0.6.10-lzma-xz-lzip-zstd.patch
 Patch1:		pinfo-0.6.9-as-needed.patch
