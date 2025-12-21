@@ -10,6 +10,10 @@ Patch0:		pinfo-0.6.10-lzma-xz-lzip-zstd.patch
 Patch1:		pinfo-0.6.9-as-needed.patch
 Patch2:		pinfo-0.6.10-clang.patch
 Patch3:		pinfo-0.6.10-Lusrlib-is-evil.patch
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	autoconf
 BuildRequires:	texinfo
 BuildRequires:	gettext-devel
